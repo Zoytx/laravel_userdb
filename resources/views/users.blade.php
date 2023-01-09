@@ -13,7 +13,7 @@
 </ul>
 @endif
 
-        <table style="width:500px; text-align:left" class="table">
+        <table style="width:800px; text-align:left" class="table">
             <thead>
                 <tr>
                 <th>First name</th>
