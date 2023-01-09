@@ -13,7 +13,7 @@
 </ul>
 @endif
 
-        <table style="width:500px; text-align:left">
+        <table style="width:500px; text-align:left" class="table">
             <thead>
                 <tr>
                 <th>First name</th>
@@ -50,7 +50,7 @@
 
             @csrf
     
-            <button type="submit">Create User</button>
+            <button type="submit" class="btn btn-primary btn-sm">Create User</button>
         
         
         

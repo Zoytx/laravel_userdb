@@ -29,19 +29,21 @@
     <br>
     <textarea name="interests" placeholder="Interests">{{$user->interests}}</textarea>
     <br>
-    <button type="submit">Save</button>
-    
-    </form>
-    
+    <button type="submit" class="btn btn-primary btn-sm">Save</button>
     <form action="{{route('deleteUser',$user->id)}}" method="POST">
 
         @csrf
 
-        <button type="submit">Delete user</button>
+        <button type="submit" class="btn btn-primary btn-sm">Delete user</button>
     
     
     
     </form>
+    <br>
+    
+    </form>
+    
+ 
 
 
 

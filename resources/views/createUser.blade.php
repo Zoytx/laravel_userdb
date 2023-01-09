@@ -25,9 +25,10 @@
 <br>
 <textarea name="interests" placeholder="Interests">{{old('interests')}}</textarea>
 <br>
-<button type="submit">Create User</button>
+<button type="submit" class="btn btn-primary btn-sm">Create User</button>
+
+<form method="get" action="{{route('showUsers')}}">
+    <button class="btn btn-primary btn-sm">View all Users</button>
 
 </form>
-<form method="get" action="{{route('showUsers')}}">
-<button>View all Users</button>
 @endsection
