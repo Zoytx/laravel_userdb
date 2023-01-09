@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('lname')->nullable(); 
             $table->string('email')->unique();
             $table->string('password');
+            $table->text('interests')->nullable();
             $table->timestamps();
         });
     } 

@@ -29,7 +29,7 @@ class User_Controller extends Controller
             [
                 'fname' => 'required',
                 'lname' => 'required',
-                'email' => 'required|email',
+                'email' => 'required|email|unique:users,email,' . request()->id,
                 'password' => 'required'
 
             ]
@@ -44,6 +44,7 @@ class User_Controller extends Controller
         $user->lname=$request->lname;
         $user->password=$request->password;
         $user->email=$request->email;
+        $user->interests=$request->interests;
         $user->save();
         return redirect()->back()->with('success','User saved');
     }    
@@ -65,8 +66,9 @@ class User_Controller extends Controller
         $user->lname = $request->lname;
         $user->email = $request->email;
         $user->password = $request->password;
+        $user->interests=$request->interests;
         $user->save();
-        return redirect()->back()->with('success','User Updates');
+        return redirect('/')->with('success','User Updated');
 
     }
 

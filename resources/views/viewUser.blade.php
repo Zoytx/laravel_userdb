@@ -27,6 +27,8 @@
     <br>
     <input type="password" name="password" placeholder="Password" value="">
     <br>
+    <textarea name="interests" placeholder="Interests">{{$user->interests}}</textarea>
+    <br>
     <button type="submit">Save</button>
     
     </form>
@@ -40,5 +42,7 @@
     
     
     </form>
+
+
 
 @endsection

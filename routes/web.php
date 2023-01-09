@@ -18,7 +18,7 @@ Route::get('/view/{id}',[User_Controller::class, 'viewUser'])->name('viewUser');
 
 Route::get('/',[User_Controller::class, 'showUsers'])->name('showUsers');
 
-Route::get('/create',[User_Controller::class, 'createUser']);
+Route::get('/create',[User_Controller::class, 'createUser'])->name('fillDetails');
 
 Route::post('/create',[User_Controller::class, 'saveUser'])->name('createUser');
 

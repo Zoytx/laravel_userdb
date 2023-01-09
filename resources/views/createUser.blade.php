@@ -23,7 +23,11 @@
 <br>
 <input type="password" name="password" placeholder="Password" value="{{old('password')}}">
 <br>
+<textarea name="interests" placeholder="Interests">{{old('interests')}}</textarea>
+<br>
 <button type="submit">Create User</button>
 
 </form>
+<form method="get" action="{{route('showUsers')}}">
+<button>View all Users</button>
 @endsection
