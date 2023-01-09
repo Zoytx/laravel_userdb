@@ -30,6 +30,10 @@
     <textarea name="interests" placeholder="Interests">{{$user->interests}}</textarea>
     <br>
     <button type="submit" class="btn btn-primary btn-sm">Save</button>
+
+    
+    </form>
+    
     <form action="{{route('deleteUser',$user->id)}}" method="POST">
 
         @csrf
@@ -40,10 +44,6 @@
     
     </form>
     <br>
-    
-    </form>
-    
- 
 
 
 
