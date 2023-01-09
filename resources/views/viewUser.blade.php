@@ -3,7 +3,18 @@
 @section('content')
 
         <h1>{{$user->fname}} {{$user->lname}}</h1>
-
+   
+   
+    @if(session()->has('success'))
+        {{session()->get('success')}}
+    @endif
+    @if($errors->any())
+    <ul>    
+        @foreach($errors->all() as $error)
+         <li>   {{$error}} </li>
+        @endforeach
+    </ul>
+    @endif
 
         
 <form method="post" action="{{route('editUser',$user->id)}}">
@@ -19,4 +30,15 @@
     <button type="submit">Save</button>
     
     </form>
+    
+    <form action="{{route('deleteUser',$user->id)}}" method="POST">
+
+        @csrf
+
+        <button type="submit">Delete user</button>
+    
+    
+    
+    </form>
+
 @endsection

@@ -5,16 +5,17 @@
 
 
         <table style="width:500px; text-align:left">
-            <thread>
+            <thead>
                 <tr>
                 <th>First name</th>
                 <th>Last name</th>
                 <th>Email</th>
+                <th>Actions</th>
                 </tr>
 
 
 
-            </thread>
+            </thead>
 
             @foreach($users as $user)
             <tbody>
@@ -22,6 +23,7 @@
                 <td>{{$user->fname}} </td>
                 <td>{{$user->lname}}</td>
                 <td>{{$user->email}}</td>
+                <td><a href="{{route('viewUser',$user->id)}}">View User</a></td>
                 </tr>
 
             </tbody>

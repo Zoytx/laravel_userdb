@@ -14,7 +14,7 @@ use App\Http\Controllers\User_Controller;
 |
 */
 
-Route::get('/view/{id}',[User_Controller::class, 'viewUser']);
+Route::get('/view/{id}',[User_Controller::class, 'viewUser'])->name('viewUser');
 
 Route::get('/',[User_Controller::class, 'showUsers'])->name('showUsers');
 
@@ -23,3 +23,5 @@ Route::get('/create',[User_Controller::class, 'createUser']);
 Route::post('/create',[User_Controller::class, 'saveUser'])->name('createUser');
 
 Route::post('/view/{id}',[User_Controller::class, 'editUser'])->name('editUser');
+
+Route::post('/delete/{id}',[User_Controller::class, 'DeleteUser'])->name('deleteUser');

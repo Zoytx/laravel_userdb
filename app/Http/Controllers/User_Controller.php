@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Users;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 
@@ -23,7 +24,19 @@ class User_Controller extends Controller
     }
 
     public function saveUser(Request $request){
-       
+
+        $request->validate(
+            [
+                'fname' => 'required',
+                'lname' => 'required',
+                'email' => 'required|email',
+                'password' => 'required'
+
+            ]
+
+
+
+        );
 
         $user=new Users;
         $user->fname=$request->fname;
@@ -35,6 +48,18 @@ class User_Controller extends Controller
         return redirect()->back()->with('success','User saved');
     }    
     public function editUser(Request $request, $id){
+        $request->validate(
+            [
+                'fname' => 'required',
+                'lname' => 'required',
+                'email' => 'required|email|unique:users,email,' . request()->id,
+                'password' => 'required'
+
+            ]
+
+
+
+        );
         $user = Users::findOrFail($id);
         $user->fname = $request->fname;
         $user->lname = $request->lname;
@@ -49,5 +74,12 @@ class User_Controller extends Controller
 
         $users=Users::get();
         return view('users',compact('users'));
+    }
+
+    public function deleteUser(Request $request, $id){
+
+        $user = Users::findOrFail($id);
+        $user->delete();
+        return redirect('/')->with('success','User deleted');
     }
 }
