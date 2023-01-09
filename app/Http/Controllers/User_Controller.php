@@ -9,11 +9,11 @@ class User_Controller extends Controller
 {
     //
 
-    public function showUser(){
-        $users=Users::get();
+    public function viewUser($id){
+        $user=Users::findOrFail($id);
+        return view('viewUser',compact('user'));
        
-//dd($users);
-        return view('home',compact('users'));
+
     }
 
 
@@ -34,6 +34,16 @@ class User_Controller extends Controller
         $user->save();
         return redirect()->back()->with('success','User saved');
     }    
+    public function editUser(Request $request, $id){
+        $user = Users::findOrFail($id);
+        $user->fname = $request->fname;
+        $user->lname = $request->lname;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
+        return redirect()->back()->with('success','User Updates');
+
+    }
 
     public function showUsers(){
 
