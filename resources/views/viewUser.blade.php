@@ -25,7 +25,7 @@
     <br>
     <input type="email" name="email" placeholder="Email" value="{{$user->email}}">
     <br>
-    <input type="password" name="password" placeholder="Password" value="">
+    <input type="password" name="password" placeholder="Password" value="{{$user->password}}">
     <br>
     <textarea name="interests" placeholder="Interests">{{$user->interests}}</textarea>
     <br>
