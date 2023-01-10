@@ -1,8 +1,9 @@
 @extends('includes.master')
 
 @section('content')
-
-        <h1>{{$user->fname}} {{$user->lname}}</h1>
+        
+    <h2 style="text-align: center">Edit User</h2>
+        <h3 style="text-align: center; margin-top:1%">{{$user->fname}} {{$user->lname}}</h3>
    
    
     @if(session()->has('success'))
@@ -16,18 +17,23 @@
     </ul>
     @endif
 
-        
+    <div class="container">
 <form method="post" action="{{route('editUser',$user->id)}}">
     @csrf
-    <input type="text" name="fname" placeholder="First Name" value="{{$user->fname}}">
+    <label>First Name</label><br>
+    <input class="form-control form-control-sm" type="text" name="fname" placeholder="First Name" value="{{$user->fname}}">
     <br>
-    <input type="text" name="lname" placeholder="Last Name" value="{{$user->lname}}">
+    <label>Last Name</label><br>
+    <input class="form-control form-control-sm" type="text" name="lname" placeholder="Last Name" value="{{$user->lname}}">
     <br>
-    <input type="email" name="email" placeholder="Email" value="{{$user->email}}">
+    <label>Email</label><br>
+    <input class="form-control form-control-sm" type="email" name="email" placeholder="Email" value="{{$user->email}}">
     <br>
-    <input type="password" name="password" placeholder="Password" value="{{$user->password}}">
+    <label>Password</label><br>
+    <input class="form-control form-control-sm" type="password" name="password" placeholder="Password" value="{{$user->password}}">
     <br>
-    <textarea name="interests" placeholder="Interests">{{$user->interests}}</textarea>
+    <label>Interests</label><br>
+    <textarea class="form-control form-control-sm" name="interests" placeholder="Interests">{{$user->interests}}</textarea>
     <br>
     <button type="submit" class="btn btn-primary btn-sm">Save</button>
 
@@ -38,7 +44,7 @@
 
         @csrf
 
-        <button type="submit" class="btn btn-primary btn-sm">Delete user</button>
+        <button style="margin-top: 1%" type="submit" class="btn btn-primary btn-sm">Delete user</button>
     
     
     
@@ -46,5 +52,5 @@
     <br>
 
 
-
+</div>
 @endsection
