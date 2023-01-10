@@ -23,6 +23,16 @@ class User_Controller extends Controller
 
     }
 
+
+
+    public function similarInterest(Request $request){
+        $users = Users::where('interests','like',$request->interest.'%')->get();
+        return view('interests',compact('users'));
+
+    }
+
+
+
     public function saveUser(Request $request){
 
         $request->validate(

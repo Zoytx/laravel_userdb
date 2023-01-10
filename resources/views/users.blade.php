@@ -45,8 +45,14 @@
                     @csrf
                     <button type="submit" class="btn btn-primary btn-sm">Add User</button>
                 </form>
-            
+
+
+                <form action="{{route('similarInterest')}}" method="post">
+                    @csrf
+                <input style="margin-top: 1%" name="interest"  class="form-control form-control-sm" type="text" placeholder="Search Interest">
+                 </form>
         </div>
+       
 @endsection
 
 @section('scripts')

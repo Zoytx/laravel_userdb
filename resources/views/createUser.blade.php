@@ -14,23 +14,23 @@
 @endif
 <div class="container">
 <form method="post" action="{{route('createUser')}}">
-@csrf
-<label>First Name</label><br>
-<input class="form-control form-control-sm" type="text" name="fname" placeholder="John" value="{{old('fname')}}">
-<br>
-<label>Last Name</label><br>
-<input class="form-control form-control-sm" type="text" name="lname" placeholder="Doe" value="{{old('lname')}}">
-<br>
-<label>Email address</label><br>
-<input class="form-control form-control-sm" type="email" name="email" placeholder="testexp@abc.com" value="{{old('email')}}">
-<br>
-<label>Password</label><br>
-<input class="form-control form-control-sm" type="password" name="password" placeholder="********" value="{{old('password')}}">
-<br>
-<label>Interests</label><br>
-<textarea class="form-control form-control-sm" name="interests" placeholder="Gaming">{{old('interests')}}</textarea>
-<br>
-<button type="submit" class="btn btn-primary btn-sm">Create User</button>
+    @csrf
+    <label>First Name</label><br>
+    <input class="form-control form-control-sm" type="text" name="fname" placeholder="John" value="{{old('fname')}}">
+    <br>
+    <label>Last Name</label><br>
+    <input class="form-control form-control-sm" type="text" name="lname" placeholder="Doe" value="{{old('lname')}}">
+    <br>
+    <label>Email address</label><br>
+    <input class="form-control form-control-sm" type="email" name="email" placeholder="testexp@abc.com" value="{{old('email')}}">
+    <br>
+    <label>Password</label><br>
+    <input class="form-control form-control-sm" type="password" name="password" placeholder="********" value="{{old('password')}}">
+    <br>
+    <label>Interests</label><br>
+    <textarea class="form-control form-control-sm" name="interests" placeholder="Gaming">{{old('interests')}}</textarea>
+    <br>
+    <button type="submit" class="btn btn-primary btn-sm">Create User</button>
 </form>
 
 <form method="get" action="{{route('showUsers')}}">

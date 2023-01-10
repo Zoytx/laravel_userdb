@@ -25,3 +25,5 @@ Route::post('/create',[User_Controller::class, 'saveUser'])->name('createUser');
 Route::post('/view/{id}',[User_Controller::class, 'editUser'])->name('editUser');
 
 Route::post('/delete/{id}',[User_Controller::class, 'DeleteUser'])->name('deleteUser');
+
+Route::post('/interests',[User_Controller::class, 'similarInterest'])->name('similarInterest');
