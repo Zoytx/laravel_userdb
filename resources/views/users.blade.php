@@ -15,13 +15,13 @@
         </ul>
         @endif
 
-                <table id="table" style="width:800px; text-align:left">
+                <table id="table" style=" text-align:left">
                     <thead>
                         <tr>
-                        <th>fname</th>
-                        <th>lname</th>
-                        <th>email</th>
-                        <th>interests</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Email</th>
+                        <th>Interests</th>
                         <th>Actions</th>
                         </tr>
                     </thead>
