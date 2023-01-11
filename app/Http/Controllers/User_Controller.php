@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 use App\Models\Users;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 
 class User_Controller extends Controller
 {
-    //
+    public function __construct()
+    {
+        $this->middleware('auth');        
+    }
 
     public function viewUser($id){
         $user=Users::findOrFail($id);
@@ -52,7 +56,7 @@ class User_Controller extends Controller
         $user->fname=$request->fname;
         
         $user->lname=$request->lname;
-        $user->password=$request->password;
+        $user->password=Hash::make($request->password);
         $user->email=$request->email;
         $user->interests=$request->interests;
         $user->save();
@@ -78,7 +82,7 @@ class User_Controller extends Controller
         $user->password = $request->password;
         $user->interests=$request->interests;
         $user->save();
-        return redirect('/')->with('success','User Updated');
+        return redirect('admin/welcome/')->with('success','User Updated');
 
     }
 
@@ -92,6 +96,6 @@ class User_Controller extends Controller
 
         $user = Users::findOrFail($id);
         $user->delete();
-        return redirect('/')->with('success','User deleted');
+        return redirect('admin/welcome/')->with('success','User deleted');
     }
 }
