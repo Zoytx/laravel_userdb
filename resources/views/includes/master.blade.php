@@ -21,7 +21,14 @@
                 <a class="nav-link active" aria-current="page" href="{{route('fillDetails')}}">Create User</a>
               </li>
             </ul>
- 
+            <nav class="navbar bg-light">
+              <div class="container-fluid">
+                <form method="POST" action="{{route('logout')}}">
+                  @csrf
+                  <button class="btn btn-outline-success" type="submit">Log out</button>
+                </form>
+              </div>
+            </nav>
           </div>
         </div>
       </nav>

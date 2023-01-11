@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Users;
-use Illuminate\Foundation\Auth\User;
+use Illuminate\Foundation\Auth\admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -11,8 +11,10 @@ class User_Controller extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');        
+        $this->middleware('auth:admins');        
     }
+
+    
 
     public function viewUser($id){
         $user=Users::findOrFail($id);

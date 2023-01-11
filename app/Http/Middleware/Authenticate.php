@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+use App\Models\admin;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 
