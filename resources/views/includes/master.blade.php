@@ -23,10 +23,13 @@
             </ul>
             <nav class="navbar bg-light">
               <div class="container-fluid">
+                 @if(Auth::check()) 
                 <form method="POST" action="{{route('logout')}}">
                   @csrf
                   <button class="btn btn-outline-success" type="submit">Log out</button>
                 </form>
+                @endif
+
               </div>
             </nav>
           </div>

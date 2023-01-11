@@ -22,6 +22,9 @@ class AuthenticationController extends Controller
         ])){
             return redirect()->guest(route('showUsers'));
         }
+        else{
+            return redirect()->guest(route('login'));
+        }
     }
 
     public function logout(Request $request){
